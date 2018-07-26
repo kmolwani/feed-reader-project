@@ -27,16 +27,20 @@ $(function() {
         });
 
          // The following test checks if allFeeds has URL defined and is not empty
-         it('urls are defined', function() {
-             expect(feedUrl).toBeDefined();
-             expect(feedUrl.length).not.toBe(0);
+         it('urls are defined and are not empty', function() {
+         	 allFeeds.forEach(function(feed) {
+		         expect(feed.url).toBeDefined();
+		         expect(feed.url.length).not.toBe(0);
+		     });
          });
 
 
          // The following test checks if allFeeds has name defined is are not empty
-         it('names are defined', function() {
-             expect(feedName).toBeDefined();
-             expect(feedName.length).not.toBe(0);
+         it('names are defined and are not empty', function() {
+         	 allFeeds.forEach(function(feed) {
+		         expect(feed.name).toBeDefined();
+		         expect(feed.name.length).not.toBe(0);
+		     });
          });
     });
 
