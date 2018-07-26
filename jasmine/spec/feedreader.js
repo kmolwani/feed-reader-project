@@ -26,23 +26,14 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
-
+         // The following test checks if allFeeds has URL defined and is not empty
          it('urls are defined', function() {
              expect(feedUrl).toBeDefined();
              expect(feedUrl.length).not.toBe(0);
          });
 
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
-
+         // The following test checks if allFeeds has name defined is are not empty
          it('names are defined', function() {
              expect(feedName).toBeDefined();
              expect(feedName.length).not.toBe(0);
@@ -50,7 +41,7 @@ $(function() {
     });
 
 
-    /* TODO: Write a new test suite named "The menu" */
+    // Writing a new test suite named "The menu"
     describe('The Menu', function() {
 
         /* TODO: Write a test that ensures the menu element is
@@ -58,16 +49,15 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+         // The following test checks for 'the menu' to be hidden by default
          it('is hidden by default', function() {
            var isHidden = $('body').hasClass('menu-hidden');
            expect(isHidden).toBe(true);
          });
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+          // The following test checks if the menu icon is clicked, does the menu appear and does ... 
+          // it hide if the menu icon is clicked again
+
           it('toggles On and Off', function() {
             var menuIcon = $('.menu-icon-link');
             // toggling the menu ON
@@ -79,24 +69,13 @@ $(function() {
             var menuHidden = $('body').hasClass('menu-hidden');
             expect(menuHidden).toBe(true);
           });
-
-          // it('is hidden', function() {
-          //   var menuIcon = $('.menu-icon-link');
-          //   menuIcon.click();
-          //   // menuIcon.click();
-          //   var menuHidden = $('body').hasClass('menu-hidden');
-          //   expect(menuHidden).toBe(true);
-          // });
     });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+    // Writing a new test suite named "Initial Entries"
     describe('Initial Entries', function() {
 
-        /* TODO: Write a test that ensures when the loadFeed
-         * function is called and completes its work, there is at least
+        /* The following test checks that there is at least
          * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
          beforeEach(function(done) {
@@ -105,18 +84,17 @@ $(function() {
 
 
          it('has atleast one entry', function() {
-           var entry = $('.entry').length;
+           var entry = $('.feed .entry').length;
            console.log(entry);
            expect(entry).not.toBe(0);
          });
     });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    //Writing a new test suite named "New Feed Selection"
     describe('New Feed Selection', function() {
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+        // The follwing checks for the change of content 
+        // when a new feed is loaded by loadFeed().
+         
 
          var currentFeed;
          var nextFeed;
